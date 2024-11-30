@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-customBlack4 border px-10 text-customWhite67 py-4 l:py-8">
+    <footer className="bg-customBlack4 px-10 text-customWhite67 py-4 l:py-8 mt-14 lg:mt-20">
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0 md:space-x-8">
         {/* Email with icon */}
         <div className="flex items-center space-x-2">
@@ -17,7 +17,7 @@ const Footer = () => {
 
         {/* Made with passion and heart */}
         <div className="flex items-center space-x-2 text-xs md:text-md ">
-          <p>Made with passion</p>
+          <p>Made with</p>
           <i className="fas fa-heart text-red-500"></i>
         </div>
       </div>

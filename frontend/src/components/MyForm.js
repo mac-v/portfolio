@@ -17,12 +17,10 @@ const MyForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Submitted Data:', formData);
-
   };
 
   return (
-    <div className="mx-5 sm:mx-8 lg:mx-12 mb-10 lg:mb-16 ">
+    <div id="contact" className="mx-5 sm:mx-8 lg:mx-12 mb-10 lg:mb-16 ">
       <form
         onSubmit={handleSubmit}
         className="max-w-4xl mx-auto p-6 bg-customBlack4 rounded-md lg:p-11 shadow-lg shadow-customBlack6"
@@ -44,7 +42,7 @@ const MyForm = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full p-2 border border-customLightGreen67 bg-customBlack10 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen87"
+            className="w-full p-2 border border-customBlack20 bg-customBlack10 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen67"
             placeholder="Enter your name"
           />
         </div>
@@ -62,7 +60,7 @@ const MyForm = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-2 border border-customLightGreen67 bg-customBlack10 text-customWhite67 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen87"
+            className="w-full p-2 border border-customBlack20 bg-customBlack10 text-customWhite67 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen67"
             placeholder="Enter your e-mail"
           />
         </div>
@@ -79,7 +77,7 @@ const MyForm = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            className="w-full p-2 border border-customLightGreen67 bg-customBlack10 text-customWhite67 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen87"
+            className="w-full p-2 border border-customBlack20 bg-customBlack10 text-customWhite67 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen67"
             placeholder="Enter your message"
             rows="4"
           />

@@ -3,7 +3,10 @@ import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 const ProfileCard = () => {
   return (
-    <div className=" flex justify-center text-customWhite87 mt-5 lg:mt-8 lg:mb-16">
+    <div
+      id="about-me"
+      className=" flex justify-center  text-customWhite87 mb-6 lg:mb-8 lg:mb-16"
+    >
       <div className="flex flex-col justify-center items-center gap-3 w-full max-w-m mx-5 lg:gap-5 md:max-w-xl lg:max-w-3xl xl:max-w-6xl">
         {/* Avatar */}
         <div className="relative flex items-center justify-center group">
