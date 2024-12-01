@@ -7,6 +7,9 @@ const MyForm = () => {
     message: '',
   });
 
+  const [responseMessage, setResponseMessage] = useState('');
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -15,8 +18,30 @@ const MyForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      const response = await fetch('http://127.0.0.1:8000/blog_app/form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        await response.json();
+        setResponseMessage('Message sent!');
+        setErrors({});
+      } else {
+        const errorData = await response.json();
+
+        setErrors(errorData);
+      }
+    } catch (error) {
+      setResponseMessage(`Error: ${error.message}, try again`);
+    }
   };
 
   return (
@@ -32,7 +57,7 @@ const MyForm = () => {
         <div className="mb-4">
           <label
             htmlFor="name"
-            className="block text-customWhite87 font-medium mb-2 text-lg lg:text-xl"
+            className="block text-customWhite67 font-medium mb-2 text-lg lg:text-xl"
           >
             Name
           </label>
@@ -42,15 +67,18 @@ const MyForm = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full p-2 border border-customBlack20 bg-customBlack10 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen67"
+            className={`w-full p-2 border ${errors.name ? 'border-red-500' : 'border-customBlack20'} bg-customBlack10 text-customWhite67 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen67`}
             placeholder="Enter your name"
           />
+          {errors.name && (
+            <p className="text-red-500 text-sm mt-1">{errors.name[0]}</p>
+          )}
         </div>
 
         <div className="mb-4">
           <label
             htmlFor="email"
-            className="block text-customWhite87 font-medium mb-2 text-lg lg:text-xl"
+            className="block text-customWhite67 font-medium mb-2 text-lg lg:text-xl"
           >
             E-mail
           </label>
@@ -60,15 +88,19 @@ const MyForm = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-2 border border-customBlack20 bg-customBlack10 text-customWhite67 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen67"
+            className={`w-full p-2 border ${errors.email ? 'border-red-500' : 'border-customBlack20'} bg-customBlack10 text-customWhite67 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen67`}
             placeholder="Enter your e-mail"
           />
+
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email[0]}</p>
+          )}
         </div>
 
         <div className="mb-4">
           <label
             htmlFor="message"
-            className="block text-customWhite87 font-medium mb-2 text-lg lg:text-xl "
+            className="block text-customWhite67 font-medium mb-2 text-lg lg:text-xl "
           >
             Message
           </label>
@@ -85,11 +117,15 @@ const MyForm = () => {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="w-4/5 hover:scale-105 bg-customLightGreen67 text-customWhite87 p-2 mt-2 lg:mt-5 text-lg lg:text-xl  rounded-full hover:bg-customLightGreen87 transition"
+            className="w-4/5 hover:scale-105 bg-customLightGreen67 text-customWhite87 p-2 mt-2 lg:mt-5 text-lg lg:text-xl rounded-full hover:bg-customLightGreen87 transition"
           >
             Send
           </button>
         </div>
+
+        {responseMessage && (
+          <p className="text-customWhite87 mt-4">{responseMessage}</p>
+        )}
       </form>
     </div>
   );

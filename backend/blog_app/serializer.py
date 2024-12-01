@@ -1,7 +1,7 @@
-from .models import Project
+from .models import Form
 from rest_framework import serializers
 
-class ProjectSerializer(serializers.ModelSerializer):
+class FormSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Project
+        model = Form
         fields = '__all__'

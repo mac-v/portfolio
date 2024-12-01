@@ -1,18 +1,15 @@
-from django.shortcuts import render
-from django.http import HttpResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Project
-from .serializer import ProjectSerializer
+from .models import Form
+from .serializer import FormSerializer
 
+@api_view(['POST']) 
+def submit_form(request):
 
-@api_view(['GET'])
-def get_projects(request):
-    projects = Project.objects.all()
-    return Response(ProjectSerializer(projects, many=True).data)
-
-
-# class UserViewSet(viewsets.ModelViewSet):
-#     queryset = User.objects.all()
-#     serializer_class = UserSerializer
+    serializer = FormSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -4,29 +4,29 @@ const MyProjects = () => {
   const projects = [
     {
       title: 'REST API',
-      technologies: 'Python, Flask',
+      technologies: 'Python,Flask',
       duration: '10-24',
       image: '/images/rest_api.png',
       link: 'https://github.com/mac-v/links-manager',
     },
     {
       title: 'ETL process',
-      technologies: 'Python, EDA',
+      technologies: 'Python,EDA',
       duration: '07-23',
       image: '/images/etl.png',
       link: 'https://github.com/mac-v/ETL-EDA-Otomoto',
     },
     {
       title: 'Data analysis',
-      technologies: 'SQL, R, AWS',
+      technologies: 'SQL,R,AWS',
       duration: '09-23',
       image: '/images/da.png',
       link: 'https://github.com/mac-v/bike-share',
     },
 
     {
-      title: 'Frontend',
-      technologies: 'React, Tailwind CSS',
+      title: 'Portfolio',
+      technologies: 'React,Django',
       duration: '11-24',
       image: '/images/portfolio.webp',
       link: 'https://github.com/mac-v/portfolio',

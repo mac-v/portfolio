@@ -1,7 +1,7 @@
 from django.urls import path
 
-from .views import get_projects
+from .views import submit_form
 
 urlpatterns = [
-    path('projects/', get_projects, name="get_user"),
+    path('form', submit_form, name="submit-form"),
 ]
