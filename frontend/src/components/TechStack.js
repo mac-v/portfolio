@@ -1,14 +1,13 @@
 import React from 'react';
-import { FaPython, FaReact, FaGithub, FaJava } from 'react-icons/fa';
+import { FaPython, FaReact, FaGithub, FaJava, FaAws } from 'react-icons/fa';
 import {
   SiDjango,
   SiFlask,
   SiOracle,
-  SiPowerbi,
   SiFigma,
-  SiAzuredevops,
+  SiGooglecloud,
 } from 'react-icons/si';
-import { TbBrandMysql } from 'react-icons/tb';
+import { TbBrandMysql, TbBrandAzure } from 'react-icons/tb';
 
 const TechStack = () => {
   const techIcons = [
@@ -18,9 +17,17 @@ const TechStack = () => {
     { icon: <FaReact />, name: 'React' },
     { icon: <FaGithub />, name: 'GitHub' },
     { icon: <SiOracle />, name: 'Oracle' },
-    { icon: <SiPowerbi />, name: 'Power BI' },
+    {
+      icon: (
+        <img src="/images/powerbi.png" alt="Power BI" className="w-10 h-10" />
+      ),
+      name: 'Power BI',
+    },
     { icon: <TbBrandMysql />, name: 'SQL Server' },
-    { icon: <SiAzuredevops />, name: 'Azure' },
+
+    { icon: <FaAws />, name: 'AWS' },
+    { icon: <SiGooglecloud />, name: 'GCP' },
+    { icon: <TbBrandAzure />, name: 'Azure' },
     { icon: <FaJava />, name: 'Java' },
     { icon: <SiFigma />, name: 'Figma' },
   ];
