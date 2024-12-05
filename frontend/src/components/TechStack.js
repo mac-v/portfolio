@@ -1,14 +1,26 @@
 import React from 'react';
-import { FaPython, FaReact, FaGithub, FaJava, FaAws } from 'react-icons/fa';
+import {
+  FaPython,
+  FaReact,
+  FaGithub,
+  FaJava,
+  FaAws,
+  FaDocker,
+} from 'react-icons/fa';
 import {
   SiDjango,
   SiFlask,
   SiOracle,
   SiFigma,
   SiGooglecloud,
+  SiDatabricks,
 } from 'react-icons/si';
-import { TbBrandMysql, TbBrandAzure } from 'react-icons/tb';
-
+import {
+  TbBrandMysql,
+  TbBrandAzure,
+  TbBrandSupabase,
+  TbBrandVercel,
+} from 'react-icons/tb';
 const TechStack = () => {
   const techIcons = [
     { icon: <SiDjango />, name: 'Django' },
@@ -18,16 +30,17 @@ const TechStack = () => {
     { icon: <FaGithub />, name: 'GitHub' },
     { icon: <SiOracle />, name: 'Oracle' },
     {
-      icon: (
-        <img src="/images/powerbi.png" alt="Power BI" className="w-10 h-10" />
-      ),
+      icon: <img src="/images/powerbi.png" alt="Power BI" />,
       name: 'Power BI',
     },
     { icon: <TbBrandMysql />, name: 'SQL Server' },
-
     { icon: <FaAws />, name: 'AWS' },
     { icon: <SiGooglecloud />, name: 'GCP' },
     { icon: <TbBrandAzure />, name: 'Azure' },
+    { icon: <SiDatabricks />, name: 'Databricks' },
+    { icon: <TbBrandSupabase />, name: 'Supabase' },
+    { icon: <TbBrandVercel />, name: 'Vercel' },
+    { icon: <FaDocker />, name: 'Docker' },
     { icon: <FaJava />, name: 'Java' },
     { icon: <SiFigma />, name: 'Figma' },
   ];

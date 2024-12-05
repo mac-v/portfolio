@@ -28,7 +28,7 @@ const MyProjects = () => {
       title: 'Portfolio',
       technologies: 'React,Django',
       duration: '11-24',
-      image: '/images/portfolio.webp',
+      image: '/images/portfolio.png',
       link: 'https://github.com/mac-v/portfolio',
     },
   ];
