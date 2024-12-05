@@ -30,7 +30,7 @@ const TechStack = () => {
     { icon: <FaGithub />, name: 'GitHub' },
     { icon: <SiOracle />, name: 'Oracle' },
     {
-      icon: <img src="/images/powerbi.svg" alt="Power BI" />,
+      icon: <img src="/images/power-bi.svg" alt="Power BI" />,
       name: 'Power BI',
     },
     { icon: <TbBrandMysql />, name: 'SQL Server' },
