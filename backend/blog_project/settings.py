@@ -67,8 +67,6 @@ WSGI_APPLICATION = "blog_project.wsgi.application"
 
 
 # Database
-
-
 load_dotenv()
 
 DATABASES = {

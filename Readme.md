@@ -1,4 +1,14 @@
-# Project Setup: Running with Docker and Docker Compose
+# Vercel deployment (only frontend) - https://portfolio-bay-kappa-50.vercel.app/
+
+# Project goals:
+* Deployment to the cloud with a CI/CD pipeline.
+* Extension of functionalities, including:
+   * Blog posting.
+   * Project posting.
+   * Filtering based on technologies used.
+
+
+## Project Setup: Running with Docker and Docker Compose
 
 ## Steps to Run Containers Locally
 
@@ -27,7 +37,7 @@
     DJANGO_SUPERUSER_PASSWORD=your_password
     ```
 
-    3. **Build and start**
+3. **Build and start**
     ```bash
     docker-compose up --build
     ```

@@ -37,9 +37,11 @@ const ProfileCard = () => {
 
         {/* Description */}
         <p className="text-m  md:text-base lg:text-xl xl:text-2xl text-customWhite67 leading-relaxed  self-start max-w">
-          Data professional passionate about programming, full-stack
-          development, and exploring new technologies. I have a strong interest
-          in data engineering and cloud solutions.
+          Data professional with a strong focus on backend development and a
+          growing interest in full-stack projects. I'm passionate about data
+          engineering, cloud technologies, and continuously expanding my skill
+          set. Currently diving deep into Azure, Databricks, and Spark to build
+          scalable, data-driven solutions
         </p>
 
         {/* Footer */}
