@@ -1,6 +1,4 @@
-import React from 'react';
-
-type CardItem = {
+type CardItemProps = {
   name: string;
   role: string;
   date: string;
@@ -10,7 +8,7 @@ type CardItem = {
 
 type CardProps = {
   title: string;
-  items: CardItem[];
+  items: CardItemProps[];
 };
 
 const Card = (props: CardProps) => {

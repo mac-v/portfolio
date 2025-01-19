@@ -1,16 +1,28 @@
-import { useState } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
+
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+type Errors = {
+  name?: string[];
+  email?: string[];
+  message?: string[];
+};
 
 const MyForm = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     message: '',
   });
 
-  const [responseMessage, setResponseMessage] = useState('');
-  const [errors, setErrors] = useState({});
+  const [responseMessage, setResponseMessage] = useState<string>('');
+  const [errors, setErrors] = useState<Errors>({});
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -18,7 +30,7 @@ const MyForm = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
@@ -36,16 +48,16 @@ const MyForm = () => {
         setErrors({});
       } else {
         const errorData = await response.json();
-
         setErrors(errorData);
       }
     } catch (error) {
-      setResponseMessage(`Error: ${error.message}, try again`);
+      const errorMessage = (error as Error).message
+      setResponseMessage(`Error: ${errorMessage}, try again`);
     }
   };
 
   return (
-    <div id="contact" className="mx-5 sm:mx-8 lg:mx-12 mb-10 lg:mb-16 ">
+    <div id="contact" className="mx-5 sm:mx-8 lg:mx-12 mb-10 lg:mb-16">
       <form
         onSubmit={handleSubmit}
         className="max-w-4xl mx-auto p-6 bg-customBlack4 rounded-md lg:p-11 shadow-lg shadow-customBlack6"
@@ -91,7 +103,6 @@ const MyForm = () => {
             className={`w-full p-2 border ${errors.email ? 'border-red-500' : 'border-customBlack20'} bg-customBlack10 text-customWhite67 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen67`}
             placeholder="Enter your e-mail"
           />
-
           {errors.email && (
             <p className="text-red-500 text-sm mt-1">{errors.email[0]}</p>
           )}
@@ -100,7 +111,7 @@ const MyForm = () => {
         <div className="mb-4">
           <label
             htmlFor="message"
-            className="block text-customWhite67 font-medium mb-2 text-lg lg:text-xl "
+            className="block text-customWhite67 font-medium mb-2 text-lg lg:text-xl"
           >
             Message
           </label>
@@ -111,7 +122,7 @@ const MyForm = () => {
             onChange={handleChange}
             className="w-full p-2 border border-customBlack20 bg-customBlack10 text-customWhite67 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen67"
             placeholder="Enter your message"
-            rows="4"
+            rows={4}
           />
         </div>
         <div className="flex justify-center">
