@@ -2,14 +2,14 @@
 import os
 from dotenv import load_dotenv
 import django
-load_dotenv()
+
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '../blog_app/.env'))
 
 username = os.getenv('DJANGO_SUPERUSER_USERNAME')
 email = os.getenv('DJANGO_SUPERUSER_EMAIL')
 password = os.getenv('DJANGO_SUPERUSER_PASSWORD')
 
 
-# Setting context
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blog_project.settings')
 

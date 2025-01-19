@@ -1,7 +1,9 @@
-import React from 'react';
-import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
-const ProfileCard = () => {
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
+
+const HeroSection = () => {
   return (
     <div
       id="about-me"
@@ -37,11 +39,8 @@ const ProfileCard = () => {
 
         {/* Description */}
         <p className="text-m  md:text-base lg:text-xl xl:text-2xl text-customWhite67 leading-relaxed  self-start max-w">
-          Data professional with a strong focus on backend development and a
-          growing interest in full-stack projects. I'm passionate about data
-          engineering, cloud technologies, and continuously expanding my skill
-          set. Currently diving deep into Azure, Databricks, and Spark to build
-          scalable, data-driven solutions
+          Software developer enthusiast with a keen interest in data and cloud technologies.
+          I enjoy exploring new ways to create scalable, data-driven solutions and continuously expanding my knowledge in these areas.
         </p>
 
         {/* Footer */}
@@ -87,4 +86,4 @@ const ProfileCard = () => {
   );
 };
 
-export default ProfileCard;
+export default HeroSection;
