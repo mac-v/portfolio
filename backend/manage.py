@@ -6,15 +6,16 @@ from dotenv import load_dotenv
 
 def main():
 
-    # is_vercel = os.getenv('VERCEL') is not None
-    #
-    # if not is_vercel:
-    #     env_file = '.env.prod' if os.getenv('ENV') == 'production' else '.env.local'
-    #     print(f"⚡ Loading env file: {env_file}")
-    #     load_dotenv(env_file, override=True)
-    #
-    # print(f"🔹 ENV={os.getenv('ENV')}")
-    # print(f"🔹 DATABASE_URL={os.getenv('DATABASE_URL')}")
+    is_vercel = os.getenv('VERCEL') is not None
+
+    if not is_vercel:
+        env_file = '.env.prod' if os.getenv('ENV') == 'production' else '.env.local'
+        print(f"⚡ Loading env file: {env_file}")
+        load_dotenv(env_file, override=True)
+
+
+    print(f"🔹 ENV={os.getenv('VERCEL')}")
+    print(f"🔹 DATABASE_URL={os.getenv('DATABASE_URL')}")
 
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'api.settings')
 
