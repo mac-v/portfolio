@@ -5,7 +5,8 @@ class Form(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
     message = models.TextField()
-    
+    test = models.TextField(default="test")
+    test2 = models.TextField(default="test2")
 
     def __str__(self):
         return self.message
