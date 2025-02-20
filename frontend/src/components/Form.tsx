@@ -1,4 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 type FormData = {
   name: string;
@@ -33,7 +34,7 @@ const MyForm = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://portfolio-qly6.vercel.app/blog_app/form', {
+      const response = await fetch(`${apiUrl}/form`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

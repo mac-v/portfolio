@@ -26,8 +26,19 @@ def index(request):
 def hello_world(request):
     return Response({"message": "Hello, World!"}, status=status.HTTP_200_OK)
 
+
 @api_view(['GET'])
 def get_form(request):
     forms = Form.objects.all()
     serializer = FormSerializer(forms, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['POST'])
+def submit_form(request):
+    serializer = FormSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

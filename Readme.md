@@ -1,11 +1,6 @@
-# Vercel deployment (only frontend) - https://portfolio-bay-kappa-50.vercel.app/
+# Vercel deployment frontend - https://portfolio-bay-kappa-50.vercel.app/
+# Vercel deployment backend - https://portfolio-qly6.vercel.app/
 
-# Project goals:
-* Deployment to the cloud with a CI/CD pipeline.
-* Extension of functionalities, including:
-   * Blog posting.
-   * Project posting.
-   * Filtering based on technologies used.
 
 
 ## Project Setup: Running with Docker and Docker Compose
@@ -18,26 +13,37 @@
    cd your-repo-name
    ```
 
-2. **Set .env in root and in blog_app**
-    ```
-    root
+2. **Set backend and frontend .env**
 
-    DB_USER=your_db_user
-    DB_PASSWORD=your_db_password
-    DB_NAME=your_db_name
-    DB_HOST=db
-    DB_PORT=5432
-    SECRET_KEY=your_secret_key
-    DEBUG=False
-
-    blog_app
+    backend .env.local and .env.prod (prod envs are stored also in Vercel)
     
-    DJANGO_SUPERUSER_USERNAME=your_username
-    DJANGO_SUPERUSER_EMAIL=your_email
-    DJANGO_SUPERUSER_PASSWORD=your_password
-    ```
+        ```
+        SECRET_KEY=your_secret_key
+        DATABASE_URL=your_db_url
+        DB_USER=your_db_user
+        DB_PASSWORD=your_db_password
+        DB_NAME=your_db_name
+        DB_HOST=your_db_host
+        DB_PORT=db_port
+        DB_ENGINE=django.db.backends.postgresql
+        DEBUG=option
+        ```
+        
+    frontend .env.local and .env.prod (prod envs are stored in Vercel)
+    
+        ```
+        VITE_API_URL=http://localhost:8000
+        ```
 
-3. **Build and start**
+
+
+3. **Build and start LOCALLY WITH CONTAINERS**
     ```bash
-    docker-compose up --build
+    docker-compose --env-file ./backend/.env.local up --build
+    ```
+   
+4. **Build and start LOCALLY**
+    ```bash
+    ENV=production python3 manage.py runserver
+
     ```

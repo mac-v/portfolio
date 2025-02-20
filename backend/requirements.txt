@@ -5,3 +5,4 @@ load_dotenv
 dj-config-url
 psycopg2-binary
 whitenoise
+dj-database-url

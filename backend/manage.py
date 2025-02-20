@@ -10,7 +10,7 @@ def main():
 
     if not is_vercel:
         env_file = '.env.prod' if os.getenv('ENV') == 'production' else '.env.local'
-        print(f"⚡ Loading env file: {env_file}")
+        print(f"Loading env file: {env_file}")
         load_dotenv(env_file, override=True)
 
 
