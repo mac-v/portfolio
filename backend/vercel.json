@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "api/wsgi.py",
@@ -7,9 +8,14 @@
   ],
   "routes": [
     {
+      "src": "/static/(.*)",
+      "dest": "/staticfiles/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "api/wsgi.py"
     }
   ],
-  "buildCommand": "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput"
+  "buildCommand": "echo 'Starting collectstatic...' && python manage.py collectstatic --noinput && echo 'Collectstatic completed!' && python manage.py makemigrations && python manage.py migrate"
+
 }
