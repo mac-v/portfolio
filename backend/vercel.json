@@ -11,7 +11,5 @@
       "src": "/(.*)",
       "dest": "api/wsgi.py"
     }
-  ],
-  "buildCommand": "echo 'Starting collectstatic...' && python manage.py collectstatic --noinput && echo 'Collectstatic completed!' && python manage.py makemigrations && python manage.py migrate"
-
+  ]
 }

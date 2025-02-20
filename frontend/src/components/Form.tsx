@@ -32,9 +32,8 @@ const MyForm = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     try {
-      const response = await fetch('http://localhost:8000/blog_app/form', {
+      const response = await fetch('http://portfolio-qly6.vercel.app/blog_app/form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

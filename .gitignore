@@ -99,6 +99,7 @@ db.sqlite3
 
 venv/
 .env
+.env.prod
 *.env
 
 
