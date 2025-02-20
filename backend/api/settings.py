@@ -94,8 +94,11 @@ WSGI_APPLICATION = 'api.wsgi.app'
 
 DATABASE_URL = os.getenv('DATABASE_URL')
 
-print(f"Loading env file: {'.env.prod' if os.getenv('ENV') == 'production' else '.env'}")
-print(f"DATABASE_URL={os.getenv('DATABASE_URL')}")
+# print(f"Loading env file: {'.env.prod' if os.getenv('ENV') == 'production' else '.env'}")
+# print(f"DATABASE_URL={os.getenv('DATABASE_URL')}")
+
+print(f"🔹 DATABASE_URL={os.getenv('DATABASE_URL')}")
+print(f"🔹 SECRET_KEY={os.getenv('SECRET_KEY')}")
 
 DATABASES = {
     'default': dj_database_url.config(default=DATABASE_URL)
