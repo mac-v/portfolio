@@ -2,9 +2,17 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+from dotenv import load_dotenv
 
 def main():
+    env_file = '.env.prod' if os.getenv('ENV') == 'production' else '.env'
+    print(f"Loading env file: {env_file}")
+
+    load_dotenv(env_file, override=True)
+    print(f"ENV={os.getenv('ENV')}")
+    print(f"DATABASE_URL={os.getenv('DATABASE_URL')}")
+
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'api.settings')
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'api.settings')
     try:
