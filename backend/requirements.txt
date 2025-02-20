@@ -4,3 +4,4 @@ django-cors-headers
 load_dotenv
 dj-config-url
 psycopg2-binary
+whitenoise
