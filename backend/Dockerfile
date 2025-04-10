@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.12
 
 ENV PYTHONPATH=/app
 
@@ -16,4 +16,4 @@ ENV PYTHONUNBUFFERED 1
 
 EXPOSE 8000
 
-CMD bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8000"
+CMD bash -c "pip install -r requirements.txt && python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8000"

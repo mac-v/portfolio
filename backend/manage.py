@@ -14,8 +14,8 @@ def main():
         load_dotenv(env_file, override=True)
 
 
-    print(f"🔹 ENV={os.getenv('VERCEL')}")
-    print(f"🔹 DATABASE_URL={os.getenv('DATABASE_URL')}")
+    print(f"ENV={os.getenv('VERCEL')}")
+    print(f"DATABASE_URL={os.getenv('DATABASE_URL')}")
 
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'api.settings')
 

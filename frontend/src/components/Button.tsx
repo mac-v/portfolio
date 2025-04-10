@@ -17,3 +17,4 @@ const Button = ({ name, target, onClick }: ButtonProps) => {
 };
 
 export default Button;
+
