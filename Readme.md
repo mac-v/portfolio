@@ -1,4 +1,3 @@
-# Vercel deployment frontend - https://portfolio-bay-kappa-50.vercel.app/
 # Vercel deployment backend - https://portfolio-qly6.vercel.app/
 
 

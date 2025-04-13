@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import url('@fortawesome/fontawesome-free/css/all.min.css');
+@import "tailwindcss";
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+
+    @apply bg-gradient-to-r from-custom-black-6 via-custom-black-10 to-custom-black-12;
+    /*@apply bg-custom-black-4;*/
+    font-family: -apple-system, BlinkMacSystemFont, 'JetBrains Mono', 'Segoe UI',
+        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+
+@theme {
+  --color-custom-black: #121212;
+  --color-custom-black-4: #1B1B1B;
+  --color-custom-black-6: #202020;
+  --color-custom-black-8: #242424;
+  --color-custom-black-10: #292929;
+  --color-custom-black-12: #2E2E2E;
+  --color-custom-black-14: #333333;
+  --color-custom-black-16: #383838;
+  --color-custom-black-18: #3D3D3D;
+  --color-custom-black-20: #414141;
+  --color-custom-light-green-100: rgb(3, 218, 198);
+  --color-custom-light-green-87: rgba(3, 218, 198, 0.87);
+  --color-custom-light-green-67: rgba(3, 218, 198, 0.67);
+  --color-custom-white-100: rgba(255, 255, 255);
+  --color-custom-white-87: rgba(255, 255, 255, 0.87);
+  --color-custom-white-67: rgba(255, 255, 255, 0.67);
+  --color-custom-white-47: rgba(255, 255, 255, 0.47);
+
+  --shadow-right-only: 9px -5px 20px 6px rgba(255, 255, 255, 0.1);
+}
+
+
+
