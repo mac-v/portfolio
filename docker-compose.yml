@@ -4,7 +4,7 @@ services:
       context: ./frontend
     ports:
       - "5173:5173"
-    command: ["npm", "start"]
+    command: [ "npm", "start" ]
     environment:
       - NODE_ENV=development
     volumes:
@@ -14,17 +14,6 @@ services:
   backend:
     build:
       context: ./backend
-    env_file:
-      - "./backend/.env.local"
-    environment:
-      SECRET_KEY: ${SECRET_KEY}
-      DEBUG: ${DEBUG}
-      DB_ENGINE: ${DB_ENGINE}
-      DB_NAME: ${DB_NAME}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_HOST: ${DB_HOST}
-      DB_PORT: ${DB_PORT}
     ports:
       - "8000:8000"
     depends_on:
@@ -36,17 +25,14 @@ services:
 
   db:
     image: postgres:13
-    env_file:
-      - "./backend/.env.local"
     environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_NAME}
-
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "${DB_USER}", "-d", "${DB_NAME}"]
+      test: [ "CMD", "pg_isready", "-U", "${DB_USER}", "-d", "${DB_NAME}" ]
       interval: 10s
       retries: 5
       timeout: 5s
@@ -55,3 +41,4 @@ services:
 
 volumes:
   pg_data:
+

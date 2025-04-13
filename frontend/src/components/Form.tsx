@@ -1,6 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
-const apiUrl = import.meta.env.VITE_API_URL;
-
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 type FormData = {
   name: string;
   email: string;
@@ -60,16 +59,16 @@ const MyForm = () => {
     <div id="contact" className="mx-5 sm:mx-8 lg:mx-12 mb-10 lg:mb-16">
       <form
         onSubmit={handleSubmit}
-        className="max-w-4xl mx-auto p-6 bg-customBlack4 rounded-md lg:p-11 shadow-lg shadow-customBlack6"
+        className="max-w-4xl mx-auto p-6 bg-custom-black-4 rounded-md lg:p-11 shadow-lg shadow-custo-black-6"
       >
-        <h2 className="text-2xl lg:text-3xl font-bold text-customWhite87 mb-4 lg:mb-8">
+        <h2 className="text-2xl lg:text-3xl font-bold text-custom-white-87 mb-4 lg:mb-8">
           Contact
         </h2>
 
         <div className="mb-4">
           <label
             htmlFor="name"
-            className="block text-customWhite67 font-medium mb-2 text-lg lg:text-xl"
+            className="block text-custom-white-67 font-medium mb-2 text-lg lg:text-xl"
           >
             Name
           </label>
@@ -79,7 +78,7 @@ const MyForm = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className={`w-full p-2 border ${errors.name ? 'border-red-500' : 'border-customBlack20'} bg-customBlack10 text-customWhite67 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen67`}
+            className={`w-full p-2 border ${errors.name ? 'border-red-500' : 'border-custom-black-20'} bg-custom-black-10 text-custom-white-67 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-light-green-67`}
             placeholder="Enter your name"
           />
           {errors.name && (
@@ -90,7 +89,7 @@ const MyForm = () => {
         <div className="mb-4">
           <label
             htmlFor="email"
-            className="block text-customWhite67 font-medium mb-2 text-lg lg:text-xl"
+            className="block text-custom-white-67 font-medium mb-2 text-lg lg:text-xl"
           >
             E-mail
           </label>
@@ -100,7 +99,7 @@ const MyForm = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className={`w-full p-2 border ${errors.email ? 'border-red-500' : 'border-customBlack20'} bg-customBlack10 text-customWhite67 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen67`}
+            className={`w-full p-2 border ${errors.email ? 'border-red-500' : 'border-custom-black-20'} bg-custom-black-10 text-custom-white-67 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-light-green-67`}
             placeholder="Enter your e-mail"
           />
           {errors.email && (
@@ -111,7 +110,7 @@ const MyForm = () => {
         <div className="mb-4">
           <label
             htmlFor="message"
-            className="block text-customWhite67 font-medium mb-2 text-lg lg:text-xl"
+            className="block text-custom-white-67 font-medium mb-2 text-lg lg:text-xl"
           >
             Message
           </label>
@@ -120,7 +119,7 @@ const MyForm = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            className="w-full p-2 border border-customBlack20 bg-customBlack10 text-customWhite67 rounded-lg focus:outline-none focus:ring-2 focus:ring-customLightGreen67"
+            className="w-full p-2 border border-custom-black-20 bg-custom-black-10 text-custom-white-67 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-light-green-67"
             placeholder="Enter your message"
             rows={4}
           />
@@ -128,14 +127,14 @@ const MyForm = () => {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="w-4/5 hover:scale-105 bg-customLightGreen67 text-customWhite87 p-2 mt-2 lg:mt-5 text-lg lg:text-xl rounded-full hover:bg-customLightGreen87 transition"
+            className="w-4/5 hover:scale-105 bg-custom-light-green-67 text-custom-white-87 p-2 mt-2 lg:mt-5 text-lg lg:text-xl rounded-full hover:bg-custom-light-green-87 transition"
           >
             Send
           </button>
         </div>
 
         {responseMessage && (
-          <p className="text-customWhite87 mt-4">{responseMessage}</p>
+          <p className="text-custom-white-87 mt-4">{responseMessage}</p>
         )}
       </form>
     </div>
